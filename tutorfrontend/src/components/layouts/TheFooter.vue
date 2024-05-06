@@ -6,7 +6,7 @@
                 <span id="about">TutorFlow is a dynamic blog created and designed to provide an interactive platform for users to create their own study space. With TutorFlow, users can connect and engage with like-minded individuals to share knowledge, exchange ideas and collaborate on study projects.</span>
             </div>
             <div class="row-2">
-                <span id="sub-title">Developed & Designed by - RCB</span>
+                <span id="sub-title">Developed & Designed by - Preetham</span>
             </div>
         </div>
         <div class="col-1" :style="{width: this.$store.state.isMobile ? '100%':'30%'}">
@@ -15,23 +15,15 @@
                     <table>
                         <tr>
                             <td id="heading"><i class="fa fa-home" style="font-size:18px"></i></td>
-                            <td>Edison, NJ, 08817, USA</td>
+                            <td>Binghamton, NY, 13905, USA</td>
                         </tr>
                         <tr>
                             <td id="heading"><i class="fa fa-envelope" style="font-size:18px"></i></td>
-                            <td>ramchandra0426@gmail.com</td>
+                            <td>preethamk@gmail.com</td>
                         </tr>
                         <tr>
                             <td id="heading"><i class="fa fa-phone" style="font-size:18px"></i></td>
-                            <td>+1 (732) 474-8217</td>
-                        </tr>
-                        <tr>
-                            <td id="heading"><i class="fa fa-linkedin" style="font-size:18px"></i></td>
-                            <td><a :href='linkedin' target="_blank">Linkedin</a></td>
-                        </tr>
-                        <tr>
-                            <td id="heading"><i class="fa fa-github" style="font-size:18px"></i></td>
-                            <td><a :href='github' target="_blank">GitHub</a></td>
+                            <td>+1 (716) 808-9656</td>
                         </tr>
                     </table>
                 </div>
@@ -57,8 +49,6 @@ export default {
         return {
             email: '',
             feedback: '',
-            linkedin: 'https://www.linkedin.com/in/ramchandrab2604/',
-            github: 'https://github.com/ram-1918'
         }
     },
     methods:{
