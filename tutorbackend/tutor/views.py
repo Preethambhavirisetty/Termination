@@ -95,8 +95,8 @@ class CreatePost(generics.ListCreateAPIView):
     queryset = TutorflowModel.objects.all()
     serializer_class = TutorSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['question', 'category', 'date_create', 'student']
@@ -107,8 +107,8 @@ class UpdatePost(generics.RetrieveUpdateDestroyAPIView):
     queryset = TutorflowModel.objects.all()
     serializer_class = TutorSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 # ----- (Get, Post, Put, Delete, patch) Answers and Answer readonly APIs --------
 
@@ -116,8 +116,8 @@ class ListAnswersAPI(generics.ListCreateAPIView):
     queryset = AnswersModel.objects.all()
     serializer_class = AnswerSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         if self.request.query_params:
@@ -136,8 +136,8 @@ class GetAnswersAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = AnswersModel.objects.all()
     serializer_class = AnswerSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     def patch(self, request, pk):
         answer = AnswersModel.objects.get(id=pk)
@@ -159,8 +159,8 @@ class ListAnswersAPI_RO(generics.ListCreateAPIView):
     queryset = AnswersModel.objects.all()
     serializer_class = AnswerSerializer_RO
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 # ----------------
 # (Get, Post, Put, Delete, patch) Favorites and favorites_readonly APIs; 
@@ -168,7 +168,7 @@ class ListAnswersAPI_RO(generics.ListCreateAPIView):
 # -----------------
 
 class ListFavoritesAPI(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
     def get(self, request):
         token = request.headers.get('Authorization', None)
@@ -191,7 +191,7 @@ class ListFavoritesAPI(APIView):
     
     def post(self, request):
         data = request.data
-        print(request.data,'------_____---_-_---__-_----___--_---_--_-_-_--')
+        print(request.data,'-----------------------------')
         user = data['user']
         question = data['question']
         serializer = FavoriteSerializer(data = {"user":user,"question":question})
@@ -203,11 +203,11 @@ class GetFavoritesAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Favorites.objects.all()
     serializer_class = FavoriteSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 class ListFavoritesAPI_RO(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
     def get(self, request):
         token = request.headers.get('Authorization', None)
@@ -239,8 +239,8 @@ class LikesAPI(generics.ListCreateAPIView):
     queryset = likes.objects.all()
     serializer_class = LikeSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         print(self.request.query_params)
@@ -260,7 +260,7 @@ class LikesAPI(generics.ListCreateAPIView):
     
     def post(self, request):
         data = request.data
-        print(request.data,'------_____-?>>>>>>>>><>><><><>>>>>><<<<<<<--_--_-_-_--')
+        print(request.data,'-------?>>>>>>>>><>><><><>>>>>><<<<<<<------_--')
         user = data['user']
         answer = data['answer']
         s = data['status']
@@ -273,8 +273,8 @@ class GetLikesAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = likes.objects.all()
     serializer_class = LikeSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     def put(self, request, pk):
         print("patch")
@@ -326,8 +326,8 @@ class FeedbackDeleteAPI(generics.RetrieveDestroyAPIView):
     queryset = Feedbacks.objects.all()
     serializer_class = FeedbackSerializer
 
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BasicAuthentication]
+    #permission_classes = [IsAuthenticated]
 
     '''
 Both blank fields case
